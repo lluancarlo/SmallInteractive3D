@@ -1,0 +1,309 @@
+[gd_scene format=3 uid="uid://bu7kiuklm5dvc"]
+
+[ext_resource type="Material" uid="uid://b7uttjpfthdj3" path="res://materials/floor.material" id="1_6we3w"]
+[ext_resource type="Script" uid="uid://cppwafgg5kxgf" path="res://scenes/game_controller.gd" id="1_k5pu3"]
+[ext_resource type="Material" uid="uid://nnt3oxojeuyi" path="res://materials/wall.material" id="2_qmak7"]
+[ext_resource type="Script" uid="uid://o1miuv1kca8a" path="res://scenes/door_north.gd" id="3_5fr2l"]
+[ext_resource type="Script" uid="uid://d3bhukoavk8nj" path="res://scenes/pressure_plate.gd" id="3_8ra5a"]
+[ext_resource type="Material" uid="uid://jv73o7whthk8" path="res://materials/pressure_plate_off.material" id="4_bq26l"]
+[ext_resource type="Material" uid="uid://bbmw3napvkt4t" path="res://materials/movable.material" id="6_bq26l"]
+[ext_resource type="Material" uid="uid://cgfc5bepwfmey" path="res://materials/lever.material" id="6_u2c82"]
+[ext_resource type="Script" uid="uid://dnyhcey1o8onk" path="res://scenes/lever.gd" id="7_iqu8w"]
+[ext_resource type="Script" uid="uid://d3hn6y5kjsn8t" path="res://scenes/player.gd" id="7_u2c82"]
+
+[sub_resource type="Environment" id="Environment_ufxs0"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iqu8w"]
+data = PackedVector3Array(-5, -0.005, 5, -5, -0.005, -5, -5, 0.005, -5, 5, -0.005, -5, -5, -0.005, -5, -5, -0.005, 5, -5, 0.005, -5, -5, -0.005, -5, 5, -0.005, -5, -5, 0.005, -5, -5, 0.005, 5, -5, -0.005, 5, -5, -0.005, 5, -5, 0.005, 5, 5, 0.005, 5, 5, 0.005, 5, -5, 0.005, 5, -5, 0.005, -5, -5, -0.005, 5, 5, -0.005, 5, 5, -0.005, -5, 5, 0.005, 5, 5, -0.005, 5, -5, -0.005, 5, 5, -0.005, -5, 5, -0.005, 5, 5, 0.005, 5, 5, -0.005, -5, 5, 0.005, -5, -5, 0.005, -5, -5, 0.005, -5, 5, 0.005, -5, 5, 0.005, 5, 5, 0.005, 5, 5, 0.005, -5, 5, -0.005, -5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6nngp"]
+size = Vector3(10, 4, 0.1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2sb77"]
+data = PackedVector3Array(-5, 2, -0.05, -5, -2, -0.05, 5, -2, -0.05, -5, 2, 0.05, -5, -2, 0.05, -5, -2, -0.05, -5, -2, 0.05, 5, -2, 0.05, -5, -2, -0.05, -5, 2, -0.05, -5, 2, 0.05, -5, -2, -0.05, -5, 2, 0.05, -5, 2, -0.05, 5, 2, -0.05, -5, 2, 0.05, 5, 2, 0.05, -5, -2, 0.05, 5, -2, 0.05, 5, -2, -0.05, -5, -2, -0.05, 5, 2, -0.05, 5, -2, -0.05, 5, -2, 0.05, 5, 2, 0.05, 5, -2, 0.05, -5, -2, 0.05, 5, 2, -0.05, -5, 2, -0.05, 5, -2, -0.05, 5, 2, 0.05, -5, 2, 0.05, 5, 2, -0.05, 5, 2, 0.05, 5, 2, -0.05, 5, -2, 0.05)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u2c82"]
+data = PackedVector3Array(-5, 2, -0.05, -5, -2, -0.05, 5, -2, -0.05, -5, 2, 0.05, -5, -2, 0.05, -5, -2, -0.05, -5, -2, 0.05, 5, -2, 0.05, -5, -2, -0.05, -5, 2, -0.05, -5, 2, 0.05, -5, -2, -0.05, -5, 2, 0.05, -5, 2, -0.05, 5, 2, -0.05, -5, 2, 0.05, 5, 2, 0.05, -5, -2, 0.05, 5, -2, 0.05, 5, -2, -0.05, -5, -2, -0.05, 5, 2, -0.05, 5, -2, -0.05, 5, -2, 0.05, 5, 2, 0.05, 5, -2, 0.05, -5, -2, 0.05, 5, 2, -0.05, -5, 2, -0.05, 5, -2, -0.05, 5, 2, 0.05, -5, 2, 0.05, 5, 2, -0.05, 5, 2, 0.05, 5, 2, -0.05, 5, -2, 0.05)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bq26l"]
+data = PackedVector3Array(-5, 2, -0.05, -5, -2, -0.05, 5, -2, -0.05, -5, 2, 0.05, -5, -2, 0.05, -5, -2, -0.05, -5, -2, 0.05, 5, -2, 0.05, -5, -2, -0.05, -5, 2, -0.05, -5, 2, 0.05, -5, -2, -0.05, -5, 2, 0.05, -5, 2, -0.05, 5, 2, -0.05, -5, 2, 0.05, 5, 2, 0.05, -5, -2, 0.05, 5, -2, 0.05, 5, -2, -0.05, -5, -2, -0.05, 5, 2, -0.05, 5, -2, -0.05, 5, -2, 0.05, 5, 2, 0.05, 5, -2, 0.05, -5, -2, 0.05, 5, 2, -0.05, -5, 2, -0.05, 5, -2, -0.05, 5, 2, 0.05, -5, 2, 0.05, 5, 2, -0.05, 5, 2, 0.05, 5, 2, -0.05, 5, -2, 0.05)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k5pu3"]
+data = PackedVector3Array(-5, 2, -0.05, -5, -2, -0.05, 5, -2, -0.05, -5, 2, 0.05, -5, -2, 0.05, -5, -2, -0.05, -5, -2, 0.05, 5, -2, 0.05, -5, -2, -0.05, -5, 2, -0.05, -5, 2, 0.05, -5, -2, -0.05, -5, 2, 0.05, -5, 2, -0.05, 5, 2, -0.05, -5, 2, 0.05, 5, 2, 0.05, -5, -2, 0.05, 5, -2, 0.05, 5, -2, -0.05, -5, -2, -0.05, 5, 2, -0.05, 5, -2, -0.05, 5, -2, 0.05, 5, 2, 0.05, 5, -2, 0.05, -5, -2, 0.05, 5, 2, -0.05, -5, 2, -0.05, 5, -2, -0.05, 5, 2, 0.05, -5, 2, 0.05, 5, 2, -0.05, 5, 2, 0.05, 5, 2, -0.05, 5, -2, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ra5a"]
+material = ExtResource("6_bq26l")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bq26l"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8ra5a"]
+material = ExtResource("4_bq26l")
+top_radius = 0.9
+bottom_radius = 1.0
+height = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ct5vs"]
+height = 0.5
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bq26l"]
+material = ExtResource("6_u2c82")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2c82"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5fr2l"]
+data = PackedVector3Array(-5, 2, -0.05, -5, -2, -0.05, 5, -2, -0.05, -5, 2, 0.05, -5, -2, 0.05, -5, -2, -0.05, -5, -2, 0.05, 5, -2, 0.05, -5, -2, -0.05, -5, 2, -0.05, -5, 2, 0.05, -5, -2, -0.05, -5, 2, 0.05, -5, 2, -0.05, 5, 2, -0.05, -5, 2, 0.05, 5, 2, 0.05, -5, -2, 0.05, 5, -2, 0.05, 5, -2, -0.05, -5, -2, -0.05, 5, 2, -0.05, 5, -2, -0.05, 5, -2, 0.05, 5, 2, 0.05, 5, -2, 0.05, -5, -2, 0.05, 5, 2, -0.05, -5, 2, -0.05, 5, -2, -0.05, 5, 2, 0.05, -5, 2, 0.05, 5, 2, -0.05, 5, 2, 0.05, 5, 2, -0.05, 5, -2, 0.05)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bq26l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u2c82"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u2c82"]
+size = Vector3(0.6, 0.3, 0.3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5fr2l"]
+font_size = 42
+
+[node name="MainLevel" type="Node3D" unique_id=1839333564]
+
+[node name="GameController" type="Node" parent="." unique_id=557366933 node_paths=PackedStringArray("lever", "lever_text", "door")]
+script = ExtResource("1_k5pu3")
+lever = NodePath("../Map/Room01/Props/Lever")
+lever_text = NodePath("../Control/LeverLabel")
+door = NodePath("../Map/Room01/Door")
+
+[node name="General" type="Node3D" parent="." unique_id=444367702]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="General" unique_id=1102610928]
+environment = SubResource("Environment_ufxs0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="General" unique_id=1130150848]
+transform = Transform3D(0.8660254, -0.35355347, -0.35355347, 0, -0.7071068, 0.7071068, -0.50000006, -0.61237246, -0.61237246, 0, 4, 0)
+
+[node name="Map" type="Node3D" parent="." unique_id=333354877]
+
+[node name="Room01" type="Node3D" parent="Map" unique_id=1587307108]
+
+[node name="Floor" type="Node3D" parent="Map/Room01" unique_id=1301668587]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room01/Floor" unique_id=1952171431]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map/Room01/Floor/StaticBody3D" unique_id=2031051429]
+size = Vector3(10, 0.01, 10)
+material = ExtResource("1_6we3w")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room01/Floor/StaticBody3D" unique_id=1847163362]
+shape = SubResource("ConcavePolygonShape3D_iqu8w")
+
+[node name="Door" type="Node3D" parent="Map/Room01" unique_id=1167810591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+script = ExtResource("3_5fr2l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room01/Door" unique_id=985074312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Map/Room01/Door/StaticBody3D" unique_id=132603389]
+mesh = SubResource("BoxMesh_6nngp")
+material = ExtResource("2_qmak7")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room01/Door/StaticBody3D" unique_id=1675787691]
+shape = SubResource("ConcavePolygonShape3D_2sb77")
+
+[node name="WallSouth" type="Node3D" parent="Map/Room01" unique_id=1114865315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room01/WallSouth" unique_id=1000255592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Map/Room01/WallSouth/StaticBody3D" unique_id=1067369292]
+mesh = SubResource("BoxMesh_6nngp")
+material = ExtResource("2_qmak7")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room01/WallSouth/StaticBody3D" unique_id=374694690]
+shape = SubResource("ConcavePolygonShape3D_u2c82")
+
+[node name="WallWest" type="Node3D" parent="Map/Room01" unique_id=364573306]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room01/WallWest" unique_id=1455663188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1855695e-07, 2, -5)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Map/Room01/WallWest/StaticBody3D" unique_id=1989765861]
+mesh = SubResource("BoxMesh_6nngp")
+material = ExtResource("2_qmak7")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room01/WallWest/StaticBody3D" unique_id=2108988844]
+shape = SubResource("ConcavePolygonShape3D_bq26l")
+
+[node name="WallEast" type="Node3D" parent="Map/Room01" unique_id=1976539162]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 1, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room01/WallEast" unique_id=71530280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Map/Room01/WallEast/StaticBody3D" unique_id=2002841564]
+mesh = SubResource("BoxMesh_6nngp")
+material = ExtResource("2_qmak7")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room01/WallEast/StaticBody3D" unique_id=190534465]
+shape = SubResource("ConcavePolygonShape3D_k5pu3")
+
+[node name="Props" type="Node3D" parent="Map/Room01" unique_id=1223161941]
+
+[node name="Box" type="Node3D" parent="Map/Room01/Props" unique_id=1735176103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Map/Room01/Props/Box" unique_id=380771160 groups=["movable"]]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 2.9802322e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room01/Props/Box/RigidBody3D" unique_id=1484438938]
+transform = Transform3D(0.70710677, 0.6123724, 0.35355335, -0.70710677, 0.6123724, 0.35355335, 0, -0.5, 0.8660254, 0, 0, 0)
+mesh = SubResource("BoxMesh_8ra5a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Room01/Props/Box/RigidBody3D" unique_id=170811121]
+transform = Transform3D(0.70710677, 0.6123724, 0.35355338, -0.70710677, 0.6123724, 0.35355338, 0, -0.5, 0.8660254, 0, 0, 0)
+shape = SubResource("BoxShape3D_bq26l")
+
+[node name="PressurePlate" type="Node3D" parent="Map/Room01/Props" unique_id=623710104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+script = ExtResource("3_8ra5a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room01/Props/PressurePlate" unique_id=2123008762]
+mesh = SubResource("CylinderMesh_8ra5a")
+
+[node name="Area3D" type="Area3D" parent="Map/Room01/Props/PressurePlate" unique_id=1099662924]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Room01/Props/PressurePlate/Area3D" unique_id=1734477669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_ct5vs")
+
+[node name="Lever" type="Node3D" parent="Map/Room01/Props" unique_id=1548803928]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, -3)
+script = ExtResource("7_iqu8w")
+
+[node name="Pivot" type="Node3D" parent="Map/Room01/Props/Lever" unique_id=514589388]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room01/Props/Lever/Pivot" unique_id=128104993]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0.4)
+mesh = SubResource("CylinderMesh_bq26l")
+
+[node name="Area3D" type="Area3D" parent="Map/Room01/Props/Lever" unique_id=529929635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Room01/Props/Lever/Area3D" unique_id=851135209]
+shape = SubResource("BoxShape3D_u2c82")
+
+[node name="Room02" type="Node3D" parent="Map" unique_id=269846554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Floor" type="Node3D" parent="Map/Room02" unique_id=1956930345]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room02/Floor" unique_id=898987467]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map/Room02/Floor/StaticBody3D" unique_id=618825161]
+size = Vector3(10, 0.01, 10)
+material = ExtResource("1_6we3w")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room02/Floor/StaticBody3D" unique_id=1788357195]
+shape = SubResource("ConcavePolygonShape3D_iqu8w")
+
+[node name="WallNorth" type="Node3D" parent="Map/Room02" unique_id=474778391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room02/WallNorth" unique_id=389538161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Map/Room02/WallNorth/StaticBody3D" unique_id=1065201788]
+mesh = SubResource("BoxMesh_6nngp")
+material = ExtResource("2_qmak7")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room02/WallNorth/StaticBody3D" unique_id=1285885332]
+shape = SubResource("ConcavePolygonShape3D_5fr2l")
+
+[node name="WallWest" type="Node3D" parent="Map/Room02" unique_id=1580442218]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room02/WallWest" unique_id=172426285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1855695e-07, 2, -5)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Map/Room02/WallWest/StaticBody3D" unique_id=430188486]
+mesh = SubResource("BoxMesh_6nngp")
+material = ExtResource("2_qmak7")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room02/WallWest/StaticBody3D" unique_id=946182729]
+shape = SubResource("ConcavePolygonShape3D_bq26l")
+
+[node name="WallEast" type="Node3D" parent="Map/Room02" unique_id=23875575]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 1, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Room02/WallEast" unique_id=211828233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Map/Room02/WallEast/StaticBody3D" unique_id=915169197]
+mesh = SubResource("BoxMesh_6nngp")
+material = ExtResource("2_qmak7")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Map/Room02/WallEast/StaticBody3D" unique_id=79068318]
+shape = SubResource("ConcavePolygonShape3D_k5pu3")
+
+[node name="Props" type="Node3D" parent="Map/Room02" unique_id=1413669607]
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=931928343]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2, 1, 3)
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("7_u2c82")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=168477829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01999998, 0)
+shape = SubResource("CapsuleShape3D_bq26l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1922995540]
+mesh = SubResource("CapsuleMesh_u2c82")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshInstance3D" unique_id=1218517552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35930145, -0.43947673)
+mesh = SubResource("BoxMesh_u2c82")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=2078644158]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 2, 2)
+current = true
+
+[node name="Control" type="Control" parent="." unique_id=655236196]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeverLabel" type="Label" parent="Control" unique_id=672581739]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -78.0
+offset_right = -19.999268
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "interact with lever with E"
+label_settings = SubResource("LabelSettings_5fr2l")
+
+[connection signal="pressed" from="Map/Room01/Props/PressurePlate" to="GameController" method="_on_pressure_plate_pressed"]
+[connection signal="unpressed" from="Map/Room01/Props/PressurePlate" to="GameController" method="_on_pressure_plate_unpressed"]
+[connection signal="body_entered" from="Map/Room01/Props/PressurePlate/Area3D" to="Map/Room01/Props/PressurePlate" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Map/Room01/Props/PressurePlate/Area3D" to="Map/Room01/Props/PressurePlate" method="_on_area_3d_body_exited"]
+[connection signal="child_entered_tree" from="Map/Room01/Props/PressurePlate/Area3D/CollisionShape3D" to="Map/Room01/Props/PressurePlate" method="_on_collision_shape_3d_child_entered_tree"]
+[connection signal="activated" from="Map/Room01/Props/Lever" to="GameController" method="_on_lever_activated"]
+[connection signal="body_entered" from="Map/Room01/Props/Lever/Area3D" to="Map/Room01/Props/Lever" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Map/Room01/Props/Lever/Area3D" to="Map/Room01/Props/Lever" method="_on_area_3d_body_exited"]
