@@ -25,3 +25,4 @@ func _on_pressure_plate_unpressed() -> void:
 
 func _on_lever_activated() -> void:
 	door.open_door()
+	lever_text.visible = false
