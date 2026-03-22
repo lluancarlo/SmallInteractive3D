@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ci3rokl11nngs"]
+
+[ext_resource type="Script" uid="uid://d3bhukoavk8nj" path="res://scenes/pressure_plate.gd" id="1_xtofl"]
+[ext_resource type="Material" uid="uid://jv73o7whthk8" path="res://materials/pressure_plate_off.material" id="2_r34r6"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8ra5a"]
+material = ExtResource("2_r34r6")
+top_radius = 0.9
+bottom_radius = 1.0
+height = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ct5vs"]
+height = 0.5
+radius = 0.8
+
+[node name="PressurePlate" type="Node3D" unique_id=1063539835]
+script = ExtResource("1_xtofl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=695427828]
+mesh = SubResource("CylinderMesh_8ra5a")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1706607703]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1470953657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_ct5vs")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="child_entered_tree" from="Area3D/CollisionShape3D" to="." method="_on_collision_shape_3d_child_entered_tree"]

@@ -14,11 +14,15 @@ const INPUT_INTERACT = &"interact"
 
 var can_receive_interaction : bool
 var is_player_inside : bool
+var is_activated : bool
 
 signal activated()
 
 
 func set_lock_status(lock: bool) -> void:
+	if is_activated:
+		return
+	
 	var new_rad = deg_to_rad(lock_angle if lock else unlock_angle)
 	create_tween().set_trans(Tween.TRANS_BOUNCE)\
 		.tween_property(pivot, "rotation:x", new_rad, 0.5)
@@ -44,3 +48,4 @@ func _unhandled_input(event) -> void:
 		tween.finished.connect(func(): activated.emit())
 		tween.tween_property(pivot, "rotation:x", deg_to_rad(active_angle), 0.5)
 		get_viewport().set_input_as_handled()
+		is_activated = true

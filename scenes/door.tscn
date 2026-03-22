@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c4apsq6pw0odm"]
+
+[ext_resource type="Script" uid="uid://o1miuv1kca8a" path="res://scenes/door.gd" id="1_uvdjg"]
+[ext_resource type="Material" uid="uid://nnt3oxojeuyi" path="res://materials/wall.material" id="2_83dcw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6nngp"]
+size = Vector3(10, 4, 0.1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2sb77"]
+data = PackedVector3Array(-5, 2, -0.05, -5, -2, -0.05, 5, -2, -0.05, -5, 2, 0.05, -5, -2, 0.05, -5, -2, -0.05, -5, -2, 0.05, 5, -2, 0.05, -5, -2, -0.05, -5, 2, -0.05, -5, 2, 0.05, -5, -2, -0.05, -5, 2, 0.05, -5, 2, -0.05, 5, 2, -0.05, -5, 2, 0.05, 5, 2, 0.05, -5, -2, 0.05, 5, -2, 0.05, 5, -2, -0.05, -5, -2, -0.05, 5, 2, -0.05, 5, -2, -0.05, 5, -2, 0.05, 5, 2, 0.05, 5, -2, 0.05, -5, -2, 0.05, 5, 2, -0.05, -5, 2, -0.05, 5, -2, -0.05, 5, 2, 0.05, -5, 2, 0.05, 5, 2, -0.05, 5, 2, 0.05, 5, 2, -0.05, 5, -2, 0.05)
+
+[node name="Door" type="Node3D" unique_id=309450102]
+script = ExtResource("1_uvdjg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1090568264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="StaticBody3D" unique_id=58872442]
+mesh = SubResource("BoxMesh_6nngp")
+material = ExtResource("2_83dcw")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1615210760]
+shape = SubResource("ConcavePolygonShape3D_2sb77")

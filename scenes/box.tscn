@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://is0g7tsu1yuy"]
+
+[ext_resource type="Material" uid="uid://bbmw3napvkt4t" path="res://materials/movable.material" id="1_3inec"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ra5a"]
+material = ExtResource("1_3inec")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bq26l"]
+
+[node name="Box" type="Node3D" unique_id=280510406]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=497512302 groups=["movable"]]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 2.9802322e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=392114532]
+transform = Transform3D(0.70710677, 0.6123724, 0.35355335, -0.70710677, 0.6123724, 0.35355335, 0, -0.5, 0.8660254, 0, 0, 0)
+mesh = SubResource("BoxMesh_8ra5a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=883001609]
+transform = Transform3D(0.70710677, 0.6123724, 0.35355338, -0.70710677, 0.6123724, 0.35355338, 0, -0.5, 0.8660254, 0, 0, 0)
+shape = SubResource("BoxShape3D_bq26l")
